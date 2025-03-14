@@ -28,7 +28,7 @@ A Django web application.
       ```bash
       ./venv/bin/python  # macOS/Linux
       venv\Scripts\python  # Windows
-
+      ```
 
 3. **Install Dependencies**
    ```bash
