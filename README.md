@@ -18,10 +18,17 @@ A Django web application.
    ```
 
 2. **Set Up a Virtual Environment**
-   ```bash
-   python -m venv venv
-   source venv/bin/activate  # On Windows use: venv\Scripts\activate
-   ```
+   ### Configure VS Code to Use the Virtual Environment
+
+   1. Open **VS Code**.  
+   2. Open the **Command Palette** (`Ctrl+Shift+P` or `Cmd+Shift+P` on Mac).  
+   3. Search for **"Python: Select Interpreter"** and select it.  
+   4. You should see an option like:  
+
+      ```bash
+      ./venv/bin/python  # macOS/Linux
+      venv\Scripts\python  # Windows
+
 
 3. **Install Dependencies**
    ```bash
