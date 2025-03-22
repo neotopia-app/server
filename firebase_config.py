@@ -1,14 +1,30 @@
+import os
 import firebase_admin
 from firebase_admin import credentials, db
-import os
 
-# Path to your Firebase service account key JSON file
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-firebase_cred_path = os.path.join(BASE_DIR, 'firebase-adminsdk.json')
+from dotenv import load_dotenv
 
-# Initialize the Firebase app only if it hasn’t been initialized already
+# Load environment variables
+load_dotenv()
+
+# Get Firebase credentials and database URL from .env
+FIREBASE_CREDENTIALS = os.getenv("FIREBASE_CREDENTIALS")
+FIREBASE_DATABASE_URL = os.getenv("FIREBASE_DATABASE_URL")
+
+if not FIREBASE_CREDENTIALS:
+    raise ValueError("FIREBASE_CREDENTIALS is not set in the .env file.")
+if not FIREBASE_DATABASE_URL:
+    raise ValueError("FIREBASE_DATABASE_URL is not set in the .env file.")
+
+# Initialize Firebase app only if not already initialized
 if not firebase_admin._apps:
-    cred = credentials.Certificate(firebase_cred_path)
+    cred = credentials.Certificate(FIREBASE_CREDENTIALS)
     firebase_admin.initialize_app(cred, {
-        'databaseURL': 'https://your-database-name.firebaseio.com/'
+        'databaseURL': FIREBASE_DATABASE_URL
     })
+
+# Firebase database reference
+
+
+def get_database():
+    return db.reference("/")
