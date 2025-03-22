@@ -1,0 +1,11 @@
+# Ignore Firebase credentials
+firebase-adminsdk.json
+
+# Ignore environment files
+.env
+
+# Ignore node_modules
+node_modules
+
+# Ignore dist
+dist

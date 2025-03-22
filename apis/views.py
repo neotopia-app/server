@@ -16,15 +16,15 @@ api_list = [
 
 
 def index(request):
-    return HttpResponse("Hello, this is the API list!")
+    return HttpResponse()
 
 def call_api_by_number(request, api_id):
   if(api_id > len(api_list)):
     return HttpResponseNotFound("API not found!")
   
-  api_name = api_list[api_id]
+  api_name = api_list[api_id - 1]
   # return HttpResponse("Current API number: " + str(api_id) + " and API name: " + api_name)
-  return HttpResponseRedirect(reverse('calling apis by name', args=[api_name]))
+  return HttpResponseRedirect(reverse('api-name', args=[api_name]))
 
 def call_api_by_name(request, api_name):
     if api_name in api_list:
