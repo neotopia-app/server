@@ -1,18 +1,16 @@
 from django.urls import path
 from . import views
 
-api_list = [
-    {
-        'name': 'AI Agent',
-        'url': 'ai-agent',
-        'description': 'AI Agent'
-    }
-]
-
 urlpatterns = [
-    path('', views.index, name='api-list'),
-    # <str:api_name> covert api_name to string
-    # <int:api_id> covert api_id to integer (This have to set before <str:api_name>)
-    path('<int:api_id>', views.call_api_by_number, name='api-number'),
-    path('<str:api_name>', views.call_api_by_name, name='api-name'),
+    # Users
+    path('users/get/<str:uid>/', views.get_user, name='get_user'),
+    path('users/create/', views.create_user, name='create_user'),
+    path('users/update/<str:uid>/', views.update_user, name='update_user'),
+    path('users/delete/<str:uid>/', views.delete_user, name='delete_user'),
+
+    # Notes
+    path('notes/get/<str:note_id>/', views.get_note, name='get_note'),
+    path('notes/create/', views.create_note, name='create_note'),
+    path('notes/update/<str:note_id>/', views.update_note, name='update_note'),
+    path('notes/delete/<str:note_id>/', views.delete_note, name='delete_note'),
 ]
