@@ -44,7 +44,7 @@ This is Neotopia Django backend server
    ```
 
 4. **Environment Variables**
-
+   Get Firebase service account
    Create a `.env` file in the root directory with the following variables:
 
    - FIREBASE_DATABASE_URL
