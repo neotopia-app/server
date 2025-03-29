@@ -99,7 +99,7 @@ http://<base-url>/apis/
 
 ### Get All Users
 
-**GET** `/apis/users/get`
+**GET** `/apis/users/get-users`
 
 **Response:**
 
@@ -187,7 +187,7 @@ http://<base-url>/apis/
 
 ### Get All Notes
 
-**GET** `/apis/notes/get`
+**GET** `/apis/notes/get-notes`
 
 **Response:**
 
